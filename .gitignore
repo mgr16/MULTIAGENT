@@ -1,0 +1,15 @@
+ __pycache__/
+*.pyc
+.env
+.vectorstore/
+.cache/
+.llm_cache.sqlite
+.web_cache.sqlite
+.emb_cache.sqlite
+multiagent_gpt5.egg-info/
+.pytest_cache/
+.coverage
+.DS_Store
+.vscode/
+.idea/
+.cache/eval_results/
