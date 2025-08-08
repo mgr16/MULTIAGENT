@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install -e .
+          pip install pytest ruff mypy
+      - name: Lint
+        run: |
+          source .venv/bin/activate
+          ruff check .
+          mypy app || true
+      - name: Tests
+        env:
+          # No necesitamos API para tests porque están stubs
+          OPENAI_API_KEY: "stub-key"
+        run: |
+          source .venv/bin/activate
+          pytest -q
