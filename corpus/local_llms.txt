@@ -1,0 +1,3 @@
+Los modelos locales permiten mayor privacidad, control de latencia en entornos desconectados y personalización.
+Limitaciones típicas: contexto reducido, menor robustez multimodal y necesidad de hardware dedicado.
+En escenarios críticos, un enfoque híbrido con verificación cruzada puede ser preferible.

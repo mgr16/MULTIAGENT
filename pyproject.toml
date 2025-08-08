@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiagent-gpt5"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.30.0",
+  "pydantic>=2.6.0",
+  "pydantic-settings>=2.2.1",
+  "tiktoken>=0.7.0",
+  "faiss-cpu>=1.7.4",
+  "numpy>=1.26.0",
+  "pandas>=2.2.0",
+  "aiohttp>=3.9.3",
+  "duckduckgo-search>=6.1.5",
+  "tenacity>=8.2.3",
+  "python-dotenv>=1.0.1",
+  "orjson>=3.10.0",
+  "llama-cpp-python>=0.2.56 ; platform_machine != 'arm64' or sys_platform == 'darwin'",
+  "uvloop>=0.19.0 ; sys_platform == 'linux'",
+  "rapidfuzz>=3.9.0",
+  "loguru>=0.7.2",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_ignores = true
+warn_unused_configs = true
